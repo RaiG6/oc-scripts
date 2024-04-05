@@ -15,11 +15,11 @@
           <ul>
             <li>
               <input id="googleTranscript" name="googleTranscript" type="checkbox" checked="checked" class="configField" value="true" />
-              <label for="googleTranscript">Remove google transcript</label>
+              <label for="googleTranscript">Remove Google Speech transcript</label>
             </li>
             <li>
               <input id="nibityTranscript" name="nibityTranscript" type="checkbox" checked="checked" class="configField" value="true" />
-              <label for="nibityTranscript">Remove nibity transcript</label>
+              <label for="nibityTranscript">Remove WayWithWords transcript</label>
             </li>
             <li>
               <input id="uploadedTranscript" name="uploadedTranscript" type="checkbox" checked="checked" class="configField" value="true" />
@@ -50,7 +50,7 @@
       id="retract-partial"
       fail-on-error="false"
       if="${googleTranscript}"      
-      description="Retract google transcript from event (with language code)">
+      description="Retract Google Speech transcript from event (with language code)">
       <configurations>
         <configuration key="retract-flavors">captions/timedtext+${languageCode}</configuration>
       </configurations>
@@ -60,7 +60,7 @@
       id="retract-partial"
       fail-on-error="false"
       if="${googleTranscript}"      
-      description="Retract google transcript from event">
+      description="Retract Google Speech transcript from event">
       <configurations>
         <configuration key="retract-flavors">captions/timedtext</configuration>
       </configurations>
@@ -71,7 +71,7 @@
       id="retract-partial"
       fail-on-error="false"
       if="${nibityTranscript}"
-      description="Retract nibity from event (with language code)">
+      description="Retract WayWithWords transcript from event (with language code)">
       <configurations>
         <configuration key="retract-flavors">captions/vtt+${languageCode}</configuration>
       </configurations>
@@ -82,7 +82,7 @@
       id="retract-partial"
       fail-on-error="false"
       if="${nibityTranscript}"
-      description="Retract nibity from event">
+      description="Retract WayWithWords transcript from event">
       <configurations>
         <configuration key="retract-flavors">captions/vtt</configuration>
       </configurations>
@@ -95,7 +95,7 @@
       if="${uploadedTranscript}"
       description="Retract uploaded transcript from event (with language code)">
       <configurations>
-        <configuration key="retract-flavors">text/vtt+${languageCode}</configuration>
+        <configuration key="retract-flavors">captions/upload+${languageCode}</configuration>
       </configurations>
     </operation>
 

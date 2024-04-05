@@ -21,6 +21,16 @@
       </configurations>
     </operation>
 
+    <!-- Tagging captions for publication -->
+    <operation
+        id="tag"
+        description="Tagging captions for publication">
+        <configurations>
+            <configuration key="source-flavors">${download-source-flavors}</configuration>
+            <configuration key="target-tags">engage-download,archive</configuration>
+        </configurations>
+    </operation>
+
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <!-- Publish to publication channels                                   -->
     <!--                                                                   -->
@@ -36,6 +46,7 @@
       description="Update recording in Opencast Media Module">
       <configurations>
         <configuration key="download-source-flavors">dublincore/*,security/*,text/*,captions/*</configuration>
+        <configuration key="download-source-tags">engage-download</configuration>
         <configuration key="strategy">merge</configuration>
         <configuration key="check-availability">false</configuration>
       </configurations>
