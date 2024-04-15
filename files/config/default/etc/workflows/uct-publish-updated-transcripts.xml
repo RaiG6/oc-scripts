@@ -13,8 +13,8 @@
 
         <!-- Apply the default workflow configuration -->
         <operation
-                id="defaults"
-                description="Applying default configuration values">
+            id="defaults"
+            description="Applying default configuration values">
             <configurations>
                 <configuration key="googleTranscript">true</configuration>
                 <configuration key="nibityTranscript">true</configuration>
@@ -23,32 +23,22 @@
             </configurations>
         </operation>
 
-        <!-- Tagging captions for publication -->
+        <!-- Untagging existing captions -->
         <operation
-                id="tag"
-                description="Tagging captions for publication">
+            id="tag"
+            description="Untag existing captions">
             <configurations>
                 <configuration key="source-flavors">text/*,captions/*</configuration>
                 <configuration key="target-tags">-engage-download</configuration>
             </configurations>
         </operation>
 
-        <!-- Tagging captions for publication -->
-        <operation
-                id="tag"
-                description="Tagging captions for publication">
-            <configurations>
-                <configuration key="source-flavors">${download-source-flavors}</configuration>
-                <configuration key="target-tags">engage-download,archive</configuration>
-            </configurations>
-        </operation>
-
         <!-- Remove published transcripts -->
         <operation
-                id="include"
-                fail-on-error="true"
-                exception-handler-workflow="partial-error"
-                description="Retract published transcripts from event">
+            id="include"
+            fail-on-error="true"
+            exception-handler-workflow="partial-error"
+            description="Retract published transcripts from event">
             <configurations>
                 <configuration key="workflow-id">uct-remove-transcripts</configuration>
             </configurations>
@@ -56,8 +46,8 @@
 
         <!-- Archive the current state of the mediapackage -->
         <operation
-                id="snapshot"
-                description="Archiving new assets">
+            id="snapshot"
+            description="Archiving new assets">
             <configurations>
                 <configuration key="source-flavors">*/*</configuration>
             </configurations>
@@ -65,10 +55,10 @@
 
         <!-- Publish to updated transcript -->
         <operation
-                id="include"
-                fail-on-error="true"
-                exception-handler-workflow="partial-error"
-                description="Publish updated transcript">
+            id="include"
+            fail-on-error="true"
+            exception-handler-workflow="partial-error"
+            description="Publish updated transcript">
             <configurations>
                 <configuration key="workflow-id">publish-uploaded-assets</configuration>
             </configurations>
